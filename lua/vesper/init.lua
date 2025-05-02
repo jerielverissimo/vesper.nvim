@@ -4,6 +4,7 @@ local utils = require("vesper.utils")
 local bufferline = require("vesper.integrations.bufferline")
 local cmp = require("vesper.integrations.cmp")
 local telescope = require("vesper.integrations.telescope")
+local rainbow_delimiters = require("vesper.integrations.rainbow-delimiters")
 local theme = {} -- teste
 
 local function set_terminal_colors()
@@ -297,6 +298,7 @@ local function set_groups()
 	-- integrations
 	groups = vim.tbl_extend("force", groups, cmp.highlights())
 	groups = vim.tbl_extend("force", groups, telescope.highlights())
+	groups = vim.tbl_extend("force", groups, rainbow_delimiters.highlights())
 
 	-- overrides
 	groups =
